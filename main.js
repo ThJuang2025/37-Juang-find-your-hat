@@ -2,6 +2,7 @@
 import promptSync from "prompt-sync";
 const prompt = promptSync({ sigint: true });
 
+
 // Board tiles
 const PLAYER = "*";
 const EMPTY = "░";
@@ -25,63 +26,18 @@ function printBoard(board) {
 	for (let row of board) {console.log(row.join(""));}
 };
 
+printBoard(board);
 
-// Game play loop
-// รับค่า Input จาก user ใน Terminal ที่ Enter ส่งค่าเข้า prompt
+// Keyboard-Entering Key to move PLAYER
+const VALID_KEYS = ['w', 'a', 's', 'd'];
+//  Read Input from user  that input correctly and turn to lowercase for conveneient check
+const input = prompt("Which way? (w/a/s/d): ").toLowerCase();;
 
-
-while (playing === true ) {
-	printBoard(board);
-	const input = prompt("Which way? (w/a/s/d): ");
-	if (input in "w","a","s","d") {
-		switch (input) {
-		case "w":
-			// move Up
-			playerRow--;
-			if (board[playerRow][playerCol] === HAT) {
-				console.log("***You WIN***!");
-				} 
-			else if (board[playerRow][playerCol] === HOLE) || (playerRow >2) || (playerRow <0) {
-				console.log("You lose!");
-				} else if
-					board[playerRow][playerCol] == "*";
-					break;
-		case "a":
-			//move Left
-			playerCol--;
-			if (board[playerRow][playerCol] === HAT) {
-				console.log("***You WIN***!");
-				} 
-			else if (board[playerRow][playerCol] === HOLE) || (playerCol >2) || (playerCol <0) {
-				console.log("You lose!");
-				} else if
-					board[playerRow][playerCol] == "*";
-					break;
-		case "s":
-			// move Down
-			playerRow++;
-			if (board[playerRow][playerCol] === HAT) {
-				console.log("***You WIN***!");
-				} 
-			else if (board[playerRow][playerCol] === HOLE) || (playerRow >2) || (playerRow <0) {
-				console.log("You lose!");
-				} else if
-				board[playerRow][playerCol] == "*";
-				break;
-		case "d":
-			// move Right
-			playerCol++;
-			if (board[playerRow][playerCol] === HAT) {
-				console.log("***You WIN***!");
-				} 
-			elseif (board[playerRow][playerCol] === HOLE) || (playerCol >2) || (playerCol <0) {
-				console.log("You lose!");
-				} else if
-					board[playerRow][playerCol] == "*";
-					break;
-		default: ;
-		};
-	};
+while (playing) 
+if (VALID_KEYS.includes(input)) {
+  console.log("✅ Valid input:", input);
+  playing = false;  //to exxist loop
+} else {
+  console.log("❌ Invalid input. Please enter w, a, s, or d to move PLAYER.");
 };
-
 
