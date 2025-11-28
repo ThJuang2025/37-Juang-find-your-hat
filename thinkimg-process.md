@@ -114,6 +114,9 @@
 <!-- 5. Game Rule Functions -->
 <!-- 6. Game Play Loop -->
 
+## My thinking process, please click Figma URL here. Thank you ka. :)
+https://www.figma.com/board/d1wz4AETx2hwbzl301gazw/TH.Juang-Thinking-Process?node-id=0-1&p=f&t=GX5eOTFbw1rMJpPE-0
+
 [Back to Table of Contents](#table-of-contents)
 
 ---
